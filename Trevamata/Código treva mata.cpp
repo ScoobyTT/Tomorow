@@ -3,6 +3,10 @@
 #include <string>
 
 using namespace std;
+struct  nomes{
+    string nome;
+    int peso;
+};
 
 int main() {
     int N;
@@ -28,7 +32,7 @@ int main() {
         cout << "Vamos todos encontrar a montanha!" << endl;
     } else {
         cout << "Vamos virar almoço de aranhas gigantes!" << endl;
-        for (int i = 0; i < nomes.size(); ++i) {
+        for (size_t i = 0; i < nomes.size(); ++i) {
             if (pesos[i] > capacidade) {
                 cout << nomes[i] << endl;
             }
@@ -36,4 +40,4 @@ int main() {
     }
 
     return 0;
-}
+} 
