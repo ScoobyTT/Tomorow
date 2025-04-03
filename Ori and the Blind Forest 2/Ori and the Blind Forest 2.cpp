@@ -6,7 +6,6 @@ using namespace std;
 
 // 
 struct fase {
-    int f;    // Número da fase
     int exp;  // Experiência da fase
     int bonus; // Bônus da fase
 };
@@ -15,20 +14,15 @@ int main() {
     vector<fase> fases; // Vetor para armazenar as fases
     fase aux;
 
-    int n, d, e, f = 0;
+    int n, d, e, f = 0,x;
 
     // Leitura do número de fases c
     cin >> n;
 
-    // Leitura do número 
-    for (int i = 0; i < n; i++) {
-        cin >> aux.f;
-        fases.push_back(aux);
-    }
-
     // Leitura da experiência 
     for (int i = 0; i < n; i++) {
-        cin >> fases[i].exp;
+        cin >> aux.exp;
+        fases.push_back(aux);
     }
 
     // Leitura do bônus 
@@ -42,9 +36,8 @@ int main() {
 
     // Cálculo da pontuação total (experiência + bônus)
     for (int i = 0; i < n; i++) {
-        f += fases[i].exp + fases[i].bonus;
+        f += fases[i].exp * (fases[i].bonus + e);
     }
-    f += e; // Adiciona o bônus adicional
 
     // Verificacao
     if (f >= d) {
