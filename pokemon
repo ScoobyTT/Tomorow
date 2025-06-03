@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+struct pessoa {
+    int id;
+};
+
+// Ordena por id (de forma crescente)
+bool cmp(pessoa i, pessoa j) { 
+    return i.id < j.id;
+}
+
+int main() {
+    vector<pessoa> aux;  
+    int quantidade, cod, selv, selvCod;
+
+    cout << "." << endl;
+    cin >> quantidade;
+
+    // Leitura dos ids e preenchimento do vetor
+    for (int i = 0; i < quantidade; i++) {
+        cin >> cod;
+        pessoa p;
+        p.id = cod;
+        aux.push_back(p);
+    }
+
+    // Ordena o vetor de pessoas
+    stable_sort(aux.begin(), aux.end(), cmp);
+
+
+    cout << ".." << endl;
+    cin >> selv;
+
+    vector<int> outrosCodigos;
+    for (int i = 0; i < selv; i++) {
+        cin >> selvCod;
+        outrosCodigos.push_back(selvCod);
+    }
+
+    // Exibe os códigos lidos
+    cout << "Códigos adicionais:\n";
+    for (int x : outrosCodigos) {
+        cout << x << endl;
+    }
+
+    return 0;
+}
